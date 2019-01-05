@@ -1,0 +1,9 @@
+## Kosmos Config
+
+# This is used when attempting to fix a bug in Kosmos.
+# This option controls which Kosmos packages debug information will be printed from.
+# This option does not change anything other than changing what is printed to the console.
+# If you are not currently in the process of fixing a bug in Kosmos,
+# and would like to remove console spam, set this option to [].
+
+debug: []

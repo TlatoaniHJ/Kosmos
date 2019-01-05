@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'us.tlatoani:MundoCore-GradlePlugin:1.0-BETA.4-SNAPSHOT.17'
+    }
+}
+
+apply plugin: 'us.tlatoani.mundocore'
+
+group 'us.tlatoani'
+version '1.0-BETA.2-SNAPSHOT.0'
+
+description  = 'A Skript addon focused on providing a variety of world-related features for use in scripts, '
+description += 'such as world creation and management, custom world generation, and manipulation of chunks and world borders.'
+
+mundo {
+    versionSummary 'The initial beta release of Kosmos.'
+
+    coreModules(
+            'Base:1.0-BETA.8',
+            'Registration:1.0-BETA.4',
+            'Enum:1.0-BETA.2',
+            'PropertyExpression:1.0-BETA.0',
+            'Reflection:1.0-BETA.1',
+            'ReflectiveRegistration:1.0-BETA.2',
+            'EventScope:1.0-BETA.0',
+            'BaseEvent:1.0-BETA.0',
+            'Util:1.0-BETA.2'
+    )
+    spigot '1.13.1-R0.1-SNAPSHOT'
+    bStats '1.2'
+
+    //TODO: Add soft depend on Skrand to prevent issues with registering stuff that uses the random type
+
+    command.description 'Basic information about Kosmos, viewing documentation, reloading the config, and updating.'
+
+    personalRepo '../maven-repo'
+    mundoServerIdentity '../EC2/mundo_key.pem'
+}
+
+compileJava {
+    options.compilerArgs << "-Xlint:deprecation"
+}
