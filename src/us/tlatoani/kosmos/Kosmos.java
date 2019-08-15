@@ -14,6 +14,7 @@ import us.tlatoani.kosmos.miscellaneous.MiscMundo;
 import us.tlatoani.kosmos.world_creator.WorldCreatorMundo;
 import us.tlatoani.kosmos.world_management.WorldManagementMundo;
 import us.tlatoani.kosmos.world_management.world_loader.WorldLoader;
+import us.tlatoani.mundocore.updating.Updating;
 
 import java.io.IOException;
 
@@ -33,6 +34,7 @@ public class Kosmos extends MundoAddon {
     public void onEnable() {
         super.onEnable();
         Documentation.load();
+        Updating.load();
         WorldLoader.load();
 
         Registration.register("Border", BorderMundo::load);

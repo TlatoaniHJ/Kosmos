@@ -72,6 +72,7 @@ public class WorldCreatorMundo {
             }
         });
         EnumClassInfo.registerEnum(Dimension.class, "dimension", Dimension.values())
+                .pair("OVERWORLD", Dimension.NORMAL)
                 .pair("END", Dimension.THE_END)
                 .document("Dimension", "1.0",
                         "A Minecraft world's dimension, also known as an environment.");

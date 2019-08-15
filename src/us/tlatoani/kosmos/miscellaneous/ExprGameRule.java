@@ -38,7 +38,14 @@ public class ExprGameRule extends SimpleExpression<Object> {
     }
 
     public static String getSkriptGameRuleName(GameRule<?> gameRule) {
-        return gameRule.getName().replace("_", " ").toLowerCase();
+        StringBuilder builder = new StringBuilder();
+        for (char chara : gameRule.getName().toCharArray()) {
+            if (Character.isUpperCase(chara)) {
+                builder.append(" ");
+            }
+            builder.append(Character.toLowerCase(chara));
+        }
+        return builder.toString();
     }
 
     @Override

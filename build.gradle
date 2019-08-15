@@ -11,16 +11,17 @@ buildscript {
 apply plugin: 'us.tlatoani.mundocore'
 
 group 'us.tlatoani'
-version '1.0-BETA.2-SNAPSHOT.0'
+version '1.0-BETA.4'
 
 description  = 'A Skript addon focused on providing a variety of world-related features for use in scripts, '
 description += 'such as world creation and management, custom world generation, and manipulation of chunks and world borders.'
 
 mundo {
-    versionSummary 'The initial beta release of Kosmos.'
+    versionSummary  = 'Added the alias `overworld` for the `normal` dimension, '
+    versionSummary += 'as that was conflicting with the `normal` difficulty.'
 
     coreModules(
-            'Base:1.0-BETA.8',
+            'Base:1.0-BETA.14',
             'Registration:1.0-BETA.4',
             'Enum:1.0-BETA.2',
             'PropertyExpression:1.0-BETA.0',
@@ -28,7 +29,8 @@ mundo {
             'ReflectiveRegistration:1.0-BETA.2',
             'EventScope:1.0-BETA.0',
             'BaseEvent:1.0-BETA.0',
-            'Util:1.0-BETA.2'
+            'Util:1.0-BETA.2',
+            'Updating:1.0-BETA.12'
     )
     spigot '1.13.1-R0.1-SNAPSHOT'
     bStats '1.2'

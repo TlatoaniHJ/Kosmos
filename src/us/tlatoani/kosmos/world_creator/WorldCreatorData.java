@@ -203,7 +203,7 @@ public class WorldCreatorData {
         if (Bukkit.getWorld(worldName) != null) {
             return true;
         }
-        File levelDatFile = new File("worlds/" + worldName + "/level.dat");
+        File levelDatFile = new File(Bukkit.getWorldContainer() + "/" + worldName + "/level.dat");
         return levelDatFile.exists();
     }
 

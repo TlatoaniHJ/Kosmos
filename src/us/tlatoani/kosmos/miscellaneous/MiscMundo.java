@@ -34,8 +34,8 @@ public class MiscMundo {
         String[] gameRulePatterns = Arrays
                 .stream(GameRule.values())
                 .map(rule -> rule.getType() == Boolean.class
-                        ? (ExprGameRule.getSkriptGameRuleName(rule) + " rule [(1¦default)] in %world%")
-                        : ("[(1¦default)] " + ExprGameRule.getSkriptGameRuleName(rule) + " in %world%"))
+                        ? (ExprGameRule.getSkriptGameRuleName(rule) + " rule [(1¦default)] [in %world%]")
+                        : ("[(1¦default)] " + ExprGameRule.getSkriptGameRuleName(rule) + " [in %world%]"))
                 .toArray(String[]::new);
         Registration.registerExpression(ExprGameRule.class, Object.class, ExpressionType.PROPERTY, gameRulePatterns)
                 .document("Gamerule", "1.0",
